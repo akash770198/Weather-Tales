@@ -1,0 +1,500 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #222;
+    width: 100vw;
+    /* height: 46rem; */
+    height: 100vh;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    background-image: url(images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    border-radius: 20px;
+    padding: 25px 35px;
+    text-align: center;
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black overlay */
+    border-radius: 20px;
+}
+
+/* Adjusting the z-index to ensure the overlay is behind the content */
+.search,
+.city-buttons,
+.weather-icon,
+.temp,
+.wind,
+.details,
+.city,
+.col {
+    position: relative;
+    z-index: 2;
+}
+
+.search {
+    width: 800px;
+    margin: 18px;
+    display: flex;
+    margin-left: 23%;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5px;
+}
+
+.search input {
+    border: 2px solid transparent;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 20px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+    transition: border-color 0.5ms ease;
+}
+
+.search input:hover {
+    border-color: black;
+}
+
+.search button {
+    border: 0px;
+    outline: 0;
+    background: whitesmoke;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.search button:hover {
+    border: 2px solid black;
+}
+
+.search button:active {
+    transform: scale(0.90);
+}
+
+.search button img {
+    width: 25px;
+}
+
+.weather-icon {
+    width: 15rem;
+    height: 14rem;
+}
+
+.weather h1 {
+    height: 3rem;
+    font-size: 2.6rem;
+    margin-top: -5px;
+}
+
+.weather h2 {
+    height: 3rem;
+    font-size: 2.5rem;
+}
+
+.information {
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+    margin-top: 30px;
+}
+
+.weather {
+    height: 20rem;
+    width: 15rem;
+}
+
+.col {
+    padding-top: 6rem;
+    height: 20rem;
+    width: 14rem;
+    text-align: center;
+}
+
+.col img {
+    height: 80px;
+    margin-top: 25px;
+    width: 5rem;
+}
+
+.col p {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.humidity,
+.wind {
+    font-size: 2.2rem;
+    margin-top: 40px;
+}
+
+.error-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(177, 24, 24, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    display: none;
+}
+
+.error-popup p {
+    margin: 0;
+}
+
+.error-popup.show {
+    display: block;
+}
+
+.city-buttons {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.heartbeat {
+    /* -webkit-animation: heartbeat 1.5s ease-in-out infinite both; */
+    animation: heartbeat 6s ease-in-out infinite both;
+    border: 2px solid white;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 40px;
+    margin: 100px;
+    color: white;
+    font-size: larger;
+}
+
+.city-buttons button:hover {
+    opacity: 0.8;
+    border: 3px solid black;
+}
+
+
+@-webkit-keyframes heartbeat {
+    from {
+        transform: scale(1);
+        transform-origin: center center;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        transform: scale(0.91);
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        transform: scale(0.98);
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        transform: scale(0.87);
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+        transform-origin: center center;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        transform: scale(0.91);
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        transform: scale(0.98);
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        transform: scale(0.87);
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+}
+
+#nd {
+    background-image: url(images/nd.jpg);
+}
+
+#mb {
+    background-image: url(images/mb.jpg);
+}
+
+#kk {
+    background-image: url(images/kk.jpg);
+}
+
+#bg {
+    background-image: url(images/bg.jpg);
+}
+
+.focus-in-expand h1 {
+    padding-bottom: 6px;
+}
+
+.focus-in-expand {
+    animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    padding: 60px;
+    margin: 60px;
+    position: relative;
+}
+
+@-webkit-keyframes focus-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes focus-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.vibrate-2 {
+    animation: vibrate-2 0.6s linear infinite both;
+    padding-bottom: 25px;
+    color: rgb(28, 27, 27);
+}
+
+@-webkit-keyframes vibrate-2 {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(2px, -2px);
+    }
+
+    40% {
+        transform: translate(2px, 2px);
+    }
+
+    60% {
+        transform: translate(-2px, 2px);
+    }
+
+    80% {
+        transform: translate(-2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes vibrate-2 {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(2px, -2px);
+    }
+
+    40% {
+        transform: translate(2px, 2px);
+    }
+
+    60% {
+        transform: translate(-2px, 2px);
+    }
+
+    80% {
+        transform: translate(-2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@media (max-width: 1000px) {
+    .card {
+        padding: 15px;
+        /* height: 1200px; */
+    }
+
+    .search {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .search input {
+        width: 70%;
+    }
+
+    .search button {
+        width: 13.2%;
+    }
+
+    .city-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 340px;
+    }
+
+    .city-buttons button {
+        margin: 10px;
+        height: 150px;
+        width: 150px;
+    }
+    .weather img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .col img {
+        height: 50px;
+        width: 50px;
+        margin-bottom: -30px;
+    }
+
+    .col p {
+        font-size: small;
+    }
+
+    .weather h2 {
+        height: 30px;
+        font-size: larger;
+        padding-top: 2.5px;
+    }
+
+    .col {
+        height: 200px;
+        padding-top: 20px;
+    }
+
+    .error-popup {
+        margin-top: 200px;
+    }
+
+    .weather img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .col img {
+        height: 80px;
+        width: 80px;
+        margin-top: -30px;
+    }
+}
+
+@media (max-width : 450px) {
+
+    .city-buttons button {
+        margin: 10px;
+        height: 120px;
+        width: 120px;
+    }
+
+    .search button {
+        height: 50px;
+        width: 50px;
+    }
+
+    .weather img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .col img {
+        height: 50px;
+        width: 50px;
+        margin-bottom: -30px;
+    }
+
+    .col p {
+        font-size: small;
+    }
+
+    .weather h2 {
+        height: 30px;
+        font-size: larger;
+        padding-top: 2.5px;
+    }
+
+    .col {
+        height: 200px;
+        padding-top: 20px;
+    }
+    .focus-in-expand {
+        padding: 0px;
+        width: 240px;
+        margin: 40px;
+        margin-left: 50px;
+    }
+    .focus-in-expand h1 {
+        font-size: medium;
+    }
+    .focus-in-expand h2{
+        font-size: medium;
+        height: 30px;
+        width: 240px;
+    }
+
+}
